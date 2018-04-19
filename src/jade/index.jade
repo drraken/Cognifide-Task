@@ -1,0 +1,35 @@
+doctype html
+html
+    include ./include/head.jade
+    body
+        main
+            div(id='userbox')                
+                div(id='section-1')
+                    img(src='../img/photoimg.png')                    
+                div(id='section-2')
+                    ul(id='inputul')
+                        li
+                            p EMAIL ADDRESS
+                        li
+                            input(type='text' placeholder='Enter your email adress' id='emailbox' class='inputbox')
+                        li
+                            p PASSWORD
+                        li
+                            input(type='password' placeholder='Enter your password' id='passwordbox' class='inputbox')
+                    ul(id='checkboxul' )
+                         li(class='myCheckBox')
+                            input(type='checkbox' id="c1" name='cc')
+                            label(for='c1')                          
+                                span  
+                         li
+                            p REMEMBER ME
+                                
+                         //li
+                            p(id='remp') REMEMBER ME
+                div(id='section-3')
+                    ul
+                        li 
+                            a(href='#') Forgotten password?
+                        li
+                            input(type='submit' value='LOGIN' id='loginbutton')
+    include ./include/footer.jade
