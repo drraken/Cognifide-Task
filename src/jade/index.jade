@@ -2,7 +2,7 @@ doctype html
 html
     include ./include/head.jade
     body
-        main
+        main 
             div(id='userbox')                
                 div(id='section-1')
                     img(src='../img/photoimg.png')                    
@@ -12,17 +12,28 @@ html
                             p EMAIL ADDRESS
                         li
                             input(type='text' placeholder='Enter your email adress' id='emailbox' class='inputbox')
+                            label
+                                span(class='popup-email' id='foremail') 
+                                    p(class='popupbox' id='required-email') required
+                                    div(class='starid')
+                                        p *   
                         li
                             p PASSWORD
                         li
                             input(type='password' placeholder='Enter your password' id='passwordbox' class='inputbox')
+                            label
+                                span(class='popup-password' id='forpassword') 
+                                    p(class='popupbox' id='required-password') required
+                                    div(class='starid')
+                                        p *                                     
+                                    
                     ul(id='checkboxul' )
                          li(class='myCheckBox')
-                            input(type='checkbox' id="c1" name='cc')
-                            label(for='c1')                          
-                                span  
+                            input(type='checkbox' id="c1")
+                            label(for='c1')                        
+                                span 
                          li
-                            p REMEMBER ME
+                            p(id='test123') REMEMBER ME
                                 
                          //li
                             p(id='remp') REMEMBER ME
