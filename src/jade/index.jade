@@ -3,44 +3,46 @@ html
     include ./include/head.jade
     body
         main 
-            div(id='userbox')                
-                div(id='section-1')
+            div(class='userbox')                
+                div(class='section-1')
                     img(src='../img/photoimg.png')                    
-                div(id='section-2')
-                    ul(id='inputul')
-                        li
-                            p EMAIL ADDRESS
-                        li
-                            input(type='text' placeholder='Enter your email adress' id='emailbox' class='inputbox')
-                            label
-                                span(class='popup-email' id='foremail') 
-                                    p(class='popupbox' id='required-email') required
-                                    div(class='starid')
-                                        p *   
-                        li
-                            p PASSWORD
-                        li
-                            input(type='password' placeholder='Enter your password' id='passwordbox' class='inputbox')
-                            label
-                                span(class='popup-password' id='forpassword') 
-                                    p(class='popupbox' id='required-password') required
-                                    div(class='starid')
-                                        p *                                     
-                                    
-                    ul(id='checkboxul' )
-                         li(class='myCheckBox')
-                            input(type='checkbox' id="c1")
-                            label(for='c1')                        
-                                span 
-                         li
-                            p(id='test123') REMEMBER ME
-                                
-                         //li
-                            p(id='remp') REMEMBER ME
-                div(id='section-3')
+                div(class='section-2')
+                    form(id='form1')
+                        ul(class='unorderlist')
+                            li
+                                p(id='emailParagraph') EMAIL ADDRESS
+                            li                                
+                                input(type='text' placeholder='Enter your email adress' id='emailbox' class='inputbox')                        
+                                label
+                                    span(class='popup-email' id='foremail') 
+                                        p(class='popupbox' id='required-email') required
+                                        div(class='starid')
+                                            p *   
+                                div(id='email_error')
+                            li
+                                p PASSWORD
+                            li
+                                input(type='password' placeholder='Enter your password' id='passwordbox' class='inputbox')
+                                label
+                                    span(class='popup-password' id='forpassword') 
+                                        p(class='popupbox' id='required-password') required
+                                        div(class='starid')
+                                            p *                                     
+
+                        ul(id='checkboxul' )
+                             li(class='myCheckBox')
+                                input(type='checkbox' id="c1")
+                                label(for='c1')                        
+                                    span 
+                             li
+                                p(id='test123') REMEMBER ME
+
+                             //li
+                                p(id='remp') REMEMBER ME
+                div(class='section-3')
                     ul
                         li 
-                            a(href='#') Forgotten password?
+                            a(href='./resetpassword.html') Forgotten password?
                         li
-                            input(type='submit' value='LOGIN' id='loginbutton')
+                            input(class='buttontype' type='submit' value='LOGIN' id='loginbutton' form='form1')
     include ./include/footer.jade
