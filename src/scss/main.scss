@@ -48,47 +48,47 @@ body {
                     height: 60px;
 
                 }
-                P {
-                    position: absolute;
-                    left: 130px;
-                    top: 20px;
-                    font-size: 25px;
-                    font-family: $font-SemiBold;
-                    color: white;
-                    @include respond-to-media(tablet-landscape-view) {
-                        left: 150px;
+                .section1-holder {
+                    display: flex;
+                    justify-content: flex-start;
+                    P {
+                        margin-top: 17px;
+                        margin-left: 20px;
                         font-size: 25px;
-                        top: 25px;
+                        font-family: $font-SemiBold;
+                        color: white;
+                        @include respond-to-media(tablet-landscape-view) {
+                            left: 150px;
+                            font-size: 25px;
+                            top: 25px;
+                        }
+                        @include respond-to-media(tablet-view) {
+                            left: 130px;
+                            top: 16px;
+                        }
+                        @include respond-to-media(phone-view) {
+                            left: 110px;
+                            font-size: 16px;
+                        }
                     }
-                    @include respond-to-media(tablet-view) {
-                        left:130px;
-                        top:16px;
-                    }
-                    @include respond-to-media(phone-view) {
-                        left: 110px;
-                        font-size: 16px;
-                    }
-                }
-                img {
-                    height: 100px;
-                    position: absolute;
-                    top: -8.5px;
-                    left: 33.3px;
-                    @include respond-to-media(tablet-view) {
-                        height: 88px;
-                    }
-                    @include respond-to-media(phone-view) {
-                        left: 15px;
-                        height: 80px;
-                    }
+                    img {
+                        margin-left: 30px;
+                        margin-top: -10px;
+                        height: 100px;
 
+                        @include respond-to-media(phone-view) {
+                            left: 15px;
+                            height: 80px;
+                        }
+
+                    }
                 }
                 #resetpasswordimg {
                     height: 80px;
                 }
             }
             .section-2 {
-                height: 65%;
+                height: 60%;
                 background-color: $section2-color;
                 @include respond-to-media(tablet-landscape-view) {
                     height: 65%;
@@ -128,8 +128,8 @@ body {
                             }
                             #email_error {
                                 position: absolute;
-                                top: 125px;
-                                left: 270px;
+                                top: 150px;
+                                left: 330px;
                                 font-family: $font-SemiBold;
                                 visibility: hidden;
                                 @include respond-to-media(tablet-landscape-view) {
@@ -333,106 +333,83 @@ body {
 
     }
     .section-3 {
-        height: 15%;
-        background-color: #e5e5e5;
-        @include respond-to-media(tablet-view) {
-            height: 17%;
-        }
-        @include respond-to-media(phone-view) {
-            height: 60px;
-        }
-        #Cancelbutton {
-            border: 0.9px solid red;
-            border-radius: 4px;
-            padding: 8px 9px 8px 9px;
-            color: red;
-            background-color: white;
-            position: absolute;
-            top: 258px;
-            left: 33px;
-            @include respond-to-media(tablet-landscape-view) {
-                top: 258px;
-            }
-            @include respond-to-media(tablet-view) {
-                top: 254px;
-
-            }
-            @include respond-to-media(phone-view) {
-                top: 300px;
-                left: 15px;
-            }
-
-        }
-        #resetbutton {
-            position: absolute;
-            top: 258px;
-            left: 263px;
-            padding: 8px 9px 8px 9px;
-            @include respond-to-media(tablet-landscape-view) {
-                top: 258px;
-                left: 270px;
-            }
-            @include respond-to-media(tablet-view) {
-                top: 254px;
-                left: 41vw;
-            }
-            @include respond-to-media(phone-view) {
-                top: 300px;
-                left: 37vw;
-            }
-
-        }
-
-        ul {
-            margin-left: 156px;
-            @include respond-to-media(tablet-view) {
-                margin-left: 40%;
-            }
-            @include respond-to-media(phone-view) {
-                margin-left: 13%;
-            }
-
-            li {
-                margin: 2%;
-                margin-top: 20px;
-                display: inline-block;
-                a {
-                    text-decoration: none;
-                    color: $primary-color;
-                    font-family: $font-SemiBold;
-                    font-size: 17px;
-                    @include respond-to-media(tablet-view) {
-                        font-size: 15px;
-                    }
-                    @include respond-to-media(phone-view) {
-                        font-size: 12px;
-
-                    }
-
+        height: 20%;
+        background-color: #e5e5e5;           
+        .section3-holder {
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 10%;
+            a {
+                margin-top: 34px;
+                text-decoration: none;
+                color: $primary-color;
+                font-family: $font-SemiBold;
+                font-size: 14px;
+                @include respond-to-media(tablet-view) {
+                    font-size: 15px;
                 }
-                .buttontype {
-                    padding: 8px;
-                    padding-left: 16px;
-                    padding-right: 16px;
-                    border: 1px solid $inputbox-color;
-                    border-radius: 3px 3px 3px 3px;
-                    background-color: #ffffff;
-                    color: $inputbox-color;
-                    cursor: pointer;
-                    text-decoration: none;
-                    @include respond-to-media(phone-view) {
-                        padding: 10px;
-                        padding-left: 20px;
-                        padding-right: 20px;
-                        font-size: 14px;
-                    }
+                @include respond-to-media(phone-view) {
+                    font-size: 12px;
                 }
-                .buttontype:hover {
-                    background-color: $primary-color;
-                    border: 1px solid $primary-color;
-                    color: white;
+
+            }
+            a:first-child {
+                margin-right: 20px;
+            }
+            .buttontype {
+                margin-top: 23px;
+                padding: 8px;
+                padding-left: 16px;
+                padding-right: 16px;
+                border: 1px solid $inputbox-color;
+                border-radius: 3px 3px 3px 3px;
+                background-color: #ffffff;
+                color: $inputbox-color;
+                cursor: pointer;
+                text-decoration: none;
+                font-size: 16px;
+                font-family: $font-stack;
+                @include respond-to-media(phone-view) {
+                    padding: 10px;
+                    padding-left: 20px;
+                    padding-right: 20px;
+                    font-size: 14px;
                 }
             }
+            .buttontype:hover {
+                background-color: $primary-color;
+                border: 1px solid $primary-color;
+                color: white;
+            }            
+           
+        }
+        .section3-box{
+            display: flex;   
+            justify-content: space-between;
+            height: 45px;
+            #Cancelbutton{
+                text-decoration: none;
+                margin-left: 30px;
+                color: red;                
+                background-color: white;
+                margin-top: 10px;
+                padding: 10px 10px 0px 10px;            
+                border: 1px solid red;
+                border-radius: 3px 3px 3px 3px;
+            }
+            #resetbutton{
+                padding: 10px 10px 0px 10px;
+                
+                margin-right: 45px;
+                margin-top: 10px;
+                border: 1px solid $inputbox-color;
+                color: $inputbox-color;
+                cursor: pointer;
+                border-radius: 3px 3px 3px 3px;
+                background-color: white;
+              
+            }
+            
         }
     }
 

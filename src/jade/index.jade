@@ -5,7 +5,8 @@ html
         main 
             div(class='userbox')                
                 div(class='section-1')
-                    img(src='../img/photoimg.png')                    
+                    div(class='section1-holder')
+                        img(src='../img/photoimg.png')                    
                 div(class='section-2')
                     form(class='form' id='form1')
                         ul(class='unorderlist')
@@ -41,9 +42,7 @@ html
                              //li
                                 p(id='remp') REMEMBER ME
                 div(class='section-3')
-                    ul
-                        li 
-                            a(href='./resetpassword.html') Forgotten password?
-                        li
-                            a(class='buttontype' id='loginbutton' form='form1') LOGIN
+                    div(class='section3-holder')                        
+                        a(href='./resetpassword.html') Forgotten password?
+                        a(class='buttontype' id='loginbutton' form='form1') LOGIN
     include ./include/footer.jade

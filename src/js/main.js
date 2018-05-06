@@ -6,7 +6,7 @@ var emailInputbox = document.getElementById('emailbox');
 var submitButton = document.getElementById('loginbutton');
 var emailParagraph = document.getElementById('emailParagraph');
 
-var triangle3 =document.getElementById('forReset');
+var triangle3 = document.getElementById('forReset');
 var popup3 = document.getElementById('required-reset');
 
 function wrappingIndex() {
@@ -26,20 +26,34 @@ function wrappingIndex() {
         triangle2.addEventListener('mouseout', function () {
             popup2.classList.remove('show');
         });
+
+        /*
+        addEvents(['triangle1','triangle2',...],'mouseover','popup');
+        function removeEvents(a, b, c) {
+            a.addEventListener(b, function () {
+                c.classList.remove('show');
+            });
+        }
+        function addEvents(a, b, c) {
+            a.addEventListener(b, function () {
+                c.classList.add('show');
+            });
+        }
+        */
     }
 };
-function wrappingReset(){
-     if (triangle3 == null || popup3 == null){
-         
-     }
-     else{
-         triangle3.addEventListener('mouseover', function () {
+
+function wrappingReset() {
+    if (triangle3 == null || popup3 == null) {
+
+    } else {
+        triangle3.addEventListener('mouseover', function () {
             popup3.classList.add('show');
         });
         triangle3.addEventListener('mouseout', function () {
             popup3.classList.remove('show');
         });
-     }
+    }
 }
 
 wrappingIndex();
@@ -51,7 +65,7 @@ submitButton.addEventListener('click', function (e) {
     var result = document.getElementById('email_error');
     var form1 = document.getElementById('form1');
     if (validate()) {
-        
+
         location.reload();
     } else {
         form1.classList.add('invalid');
