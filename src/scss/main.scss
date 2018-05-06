@@ -1,4 +1,5 @@
 @import 'variables';
+@import 'mixins';
 * {
     font-family: $font-stack;
     box-sizing: border-box;
@@ -13,147 +14,288 @@ body {
         background-size: cover;
         height: 100vh;
         width: 100%;
-        #smalleruserbox{
-            height: 250px;
+        #smalleruserbox {
+            height: 300px;
         }
         .userbox {
-            height: 300px;
-            width: 400px;
+            height: 400px;
+            width: 500px;
             position: absolute;
             bottom: 50%;
             right: 50%;
             transform: translate(50%, 50%);
             box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2), 0 8px 20px 0 rgba(0, 0, 0, 0.2);
+            @include respond-to-media(tablet-landscape-view) {
+                width: 50%;
+                height: 350px;
+            }
+            @include respond-to-media(tablet-view) {
+                height: 400px;
+                width: 70%;
+            }
+            @include respond-to-media(phone-view) {
+                width: 90%;
+                height: 350px;
+            }
             .section-1 {
-                height: 57px;
+                height: 20%;
                 background-color: $primary-color;
-                P{
+                @include respond-to-media(tablet-landscape-view) {}
+                @include respond-to-media(tablet-view) {
+                    height: 20%;
+                }
+                @include respond-to-media(phone-view) {
+                    height: 60px;
+
+                }
+                P {
                     position: absolute;
-                    left:130px;
-                    top:18px;
-                    font-size: 18px;
+                    left: 130px;
+                    top: 20px;
+                    font-size: 25px;
                     font-family: $font-SemiBold;
-                    color:white;
+                    color: white;
+                    @include respond-to-media(tablet-landscape-view) {
+                        left: 150px;
+                        font-size: 25px;
+                        top: 25px;
+                    }
+                    @include respond-to-media(tablet-view) {
+                        left:130px;
+                        top:16px;
+                    }
+                    @include respond-to-media(phone-view) {
+                        left: 110px;
+                        font-size: 16px;
+                    }
                 }
                 img {
-                    height: 75px;
+                    height: 100px;
                     position: absolute;
                     top: -8.5px;
                     left: 33.3px;
+                    @include respond-to-media(tablet-view) {
+                        height: 88px;
+                    }
+                    @include respond-to-media(phone-view) {
+                        left: 15px;
+                        height: 80px;
+                    }
+
+                }
+                #resetpasswordimg {
+                    height: 80px;
                 }
             }
             .section-2 {
-                height: 60%;
-                background-color: $section2-color;                  
-                .unorderlist{
-                    margin-left: 33px;
-                    li {
-                        display: block;
-                        .inputbox {
-                            padding-right: 205px;
-                            padding-top: 8px;
-                            padding-left: 10px;
-                            padding-bottom: 8px;
-                            border: 1px solid $inputbox-color;
-                            border-radius: 3px 3px 3px 3px;
-                            box-shadow: inset 0px 0px 4px rgba(81, 81, 81, 0.6);
-                            
-                        }
-                        #email_error{
-                            position: absolute;
-                            top:125px;
-                            color: red;
-                            left:270px;
-                            font-family: $font-SemiBold;
-                        }
-                        label {
-                            color: aliceblue;
-                        }
-                        span {
-                            position: absolute;
-                            width: 0;
-                            height: 0;
-                            border-top: 22px solid $primary-color;
-                            border-left: 30px solid transparent;
-                            border-right: 5px solid $primary-color;
-                            border-bottom: 3px solid transparent;
-                            border-radius: 0px 3px 0px 0px;
-                            transform: translate(-103%, 4%);
-                            cursor: pointer;                            
+                height: 65%;
+                background-color: $section2-color;
+                @include respond-to-media(tablet-landscape-view) {
+                    height: 65%;
+                }
+                @include respond-to-media(tablet-view) {
+                    height: 63%;
+                }
+                @include respond-to-media(phone-view) {
+                    height: 230px;
+                }
 
-                            .popupbox::after {
-                                visibility: hidden;
-                                content: "";
-                                position: absolute;
-                                top: 100%;
-                                left: 50%;
-                                margin-left: -5px;
-                                border-bottom: 5px solid transparent;
-                                border-right: 5px solid transparent;
-                                border-top: 5px solid $primary-color;
-                                border-left: 5px solid transparent;
-                            }
-                            .popupbox {
-                                visibility: hidden;
-                                border: 1px solid $primary-color;
-                                border-radius: 2px;
-                                position: absolute;
-                                font-size: 8px;
-                                padding: 3px 7px 3px 7px;
-                                top: -45px;
-                                right: -20px;
-                                margin: 0;
-                                color: white;
-                                background-color: $primary-color;
+                .form {
+                    .unorderlist {
+                        margin-left: 33px;
+                        @include respond-to-media(phone-view) {
+                            margin-left: 15px;
+                        }
+                        li {
+                            display: block;
+                            .inputbox {
+                                padding-top: 8px;
+                                padding-left: 10px;
+                                padding-bottom: 8px;
+                                border: 1px solid $inputbox-color;
+                                border-radius: 3px 3px 3px 3px;
+                                box-shadow: inset 0px 0px 4px rgba(81, 81, 81, 0.6);
+                                font-size: 16px;
+                                width: 90%;
+                                @include respond-to-media(tablet-view) {
+                                    width: 90%;
+                                }
+                                @include respond-to-media(phone-view) {
+                                    width: 95%;
+                                    padding-right: 0px;
+                                }
 
                             }
-                            .show {
-                                visibility: visible;
-                            }
-                            .show::after {
-                                visibility: visible;
-                            }
-                            .starid {
+                            #email_error {
                                 position: absolute;
-                                width: 10px;
-                                height: 10px;
-                                top: -22px;
-                                left: -9px;
+                                top: 125px;
+                                left: 270px;
+                                font-family: $font-SemiBold;
+                                visibility: hidden;
+                                @include respond-to-media(tablet-landscape-view) {
+                                    left: 67%;
+                                    top: 150px;
+                                }
+                                @include respond-to-media(tablet-view) {
+                                    left: 67%;
+                                    top: 150px;
+                                }
+                                @include respond-to-media(phone-view) {
+                                    left: 57%;
+                                    top: 130px;
+                                }
+
                                 p {
+                                    color: red;
+                                    font-size: 11px;
+                                }
+                            }
+                            label {
+                                color: aliceblue;
+                            }
+                            span {
+                                position: absolute;
+                                width: 0;
+                                height: 0;
+                                border-top: 22px solid $primary-color;
+                                border-left: 30px solid transparent;
+                                border-right: 5px solid $primary-color;
+                                border-bottom: 3px solid transparent;
+                                border-radius: 0px 3px 0px 0px;
+                                transform: translate(-102%, 4.5%);
+                                cursor: pointer;
+
+                                .popupbox::after {
+                                    visibility: hidden;
+                                    content: "";
+                                    position: absolute;
+                                    top: 100%;
+                                    left: 50%;
+                                    margin-left: -5px;
+                                    border-bottom: 5px solid transparent;
+                                    border-right: 5px solid transparent;
+                                    border-top: 5px solid $primary-color;
+                                    border-left: 5px solid transparent;
+                                }
+                                .popupbox {
+                                    visibility: hidden;
+                                    border: 1px solid $primary-color;
+                                    border-radius: 2px;
+                                    position: absolute;
+                                    font-size: 8px;
+                                    padding: 3px 7px 3px 7px;
+                                    top: -45px;
+                                    right: -20px;
+                                    margin: 0;
                                     color: white;
-                                    font-size: 18px;
-                                    padding: 0;
+                                    background-color: $primary-color;
+
+                                }
+                                .show {
+                                    visibility: visible;
+                                }
+                                .show::after {
+                                    visibility: visible;
+                                }
+                                .starid {
+                                    position: absolute;
+                                    width: 10px;
+                                    height: 10px;
+                                    top: -22px;
+                                    left: -9px;
+                                    p {
+                                        color: white;
+                                        font-size: 18px;
+                                        padding: 0;
+                                    }
+                                }
+                            }
+                        }
+                        p {
+                            padding-top: 20px;
+                            padding-bottom: 6px;
+                            color: $section3-color;
+                            font-family: $font-SemiBold;
+                            font-size: 16px;
+                            @include respond-to-media(tablet-landscape-view) {
+                                font-size: 15px;
+                            }
+                            @include respond-to-media(tablet-view) {
+                                font-size: 16px;
+                                padding-bottom: 9px;
+                            }
+                            @include respond-to-media(phone-view) {
+                                font-size: 16px;
+                                padding-bottom: 9px;
+                            }
+
+                        }
+                    }
+                }
+
+                .form.invalid {
+                    #emailParagraph {
+                        color: red;
+                    }
+                    #emailbox {
+                        border: 1px solid red;
+                    }
+                    .unorderlist {
+                        li {
+                            #email_error {
+                                visibility: visible;
+                                p {
+                                    display: visible;
                                 }
                             }
                         }
                     }
-                    p {
-                        padding-top: 20px;
-                        padding-bottom: 3px;
-                        color: $section3-color;
-                        font-family: $font-SemiBold;
-                    }
+
                 }
-                #resetpasswordul{
-                    p{
+
+                #resetpasswordul {
+                    p {
                         margin: 0;
                         padding: 0;
+                        @include respond-to-media(phone-view) {
+                            font-size: 16px;
+                        }
                     }
-                    #first-p{
-                        padding-top: 25px;                   
+                    #first-p {
+                        padding-top: 25px;
                     }
-                    #email-p{
-                        padding-top:13px;
+                    #email-p {
+                        padding-top: 13px;
                         padding-bottom: 6px;
+                        @include respond-to-media(phone-view) {
+                            font-size: 14px;
+                            padding-top: 10px;
+                            margin-top: 20px;
+                        }
                     }
-                    #required-reset{
+                    #required-reset {
                         padding: 3px 7px 3px 7px;
+                        font-size: 9px;
+                    }
+                    #white-star-section3 {
+                        font-size: 18px;
                     }
                 }
             }
             #checkboxul {
-                margin-top: 15px;
+                margin-top: 33px;
                 margin-left: 33px;
+                @include respond-to-media(tablet-landscape-view) {
+                    margin-top: 20px;
+                }
+                @include respond-to-media(tablet-view) {
+                    margin-top: 20px;
+                }
+                @include respond-to-media(phone-view) {
+                    margin-top: 20px;
+                    margin-left: 15px;
+                }
+
                 li {
                     display: inline-block;
                 }
@@ -182,46 +324,91 @@ body {
 
                 p {
                     margin-left: 5px;
-                    margin-bottom: 6px;
                     color: $section3-color;
                     font-family: $font-SemiBold;
+                    font-size: 14px;
                 }
             }
         }
 
     }
     .section-3 {
-        height: 21%;
-        background-color: #e5e5e5;                   
-            #Cancelbutton{
-                border: 0.9px solid red;
-                border-radius: 4px;
-                padding: 10px 11px 10px 11px;
-                color: red;
-                background-color: white;               
-                position: absolute;
-                top:215px;
-                left:33px;
-                
+        height: 15%;
+        background-color: #e5e5e5;
+        @include respond-to-media(tablet-view) {
+            height: 17%;
+        }
+        @include respond-to-media(phone-view) {
+            height: 60px;
+        }
+        #Cancelbutton {
+            border: 0.9px solid red;
+            border-radius: 4px;
+            padding: 8px 9px 8px 9px;
+            color: red;
+            background-color: white;
+            position: absolute;
+            top: 258px;
+            left: 33px;
+            @include respond-to-media(tablet-landscape-view) {
+                top: 258px;
             }
-            #resetbutton{
-                position: absolute;
-                top:215px;
-                left: 259px;
-                padding: 10px 11px 10px 11px;
-                
+            @include respond-to-media(tablet-view) {
+                top: 254px;
+
             }
-        
+            @include respond-to-media(phone-view) {
+                top: 300px;
+                left: 15px;
+            }
+
+        }
+        #resetbutton {
+            position: absolute;
+            top: 258px;
+            left: 263px;
+            padding: 8px 9px 8px 9px;
+            @include respond-to-media(tablet-landscape-view) {
+                top: 258px;
+                left: 270px;
+            }
+            @include respond-to-media(tablet-view) {
+                top: 254px;
+                left: 41vw;
+            }
+            @include respond-to-media(phone-view) {
+                top: 300px;
+                left: 37vw;
+            }
+
+        }
+
         ul {
-            margin-left: 180px;
+            margin-left: 156px;
+            @include respond-to-media(tablet-view) {
+                margin-left: 40%;
+            }
+            @include respond-to-media(phone-view) {
+                margin-left: 13%;
+            }
+
             li {
-                margin: 5px;
-                margin-top: 14px;
-                display: inline-block;              
+                margin: 2%;
+                margin-top: 20px;
+                display: inline-block;
                 a {
                     text-decoration: none;
                     color: $primary-color;
                     font-family: $font-SemiBold;
+                    font-size: 17px;
+                    @include respond-to-media(tablet-view) {
+                        font-size: 15px;
+                    }
+                    @include respond-to-media(phone-view) {
+                        font-size: 12px;
+
+                    }
+
                 }
                 .buttontype {
                     padding: 8px;
@@ -233,6 +420,12 @@ body {
                     color: $inputbox-color;
                     cursor: pointer;
                     text-decoration: none;
+                    @include respond-to-media(phone-view) {
+                        padding: 10px;
+                        padding-left: 20px;
+                        padding-right: 20px;
+                        font-size: 14px;
+                    }
                 }
                 .buttontype:hover {
                     background-color: $primary-color;

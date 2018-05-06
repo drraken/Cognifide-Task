@@ -7,7 +7,7 @@ html
                 div(class='section-1')
                     img(src='../img/photoimg.png')                    
                 div(class='section-2')
-                    form(id='form1')
+                    form(class='form' id='form1')
                         ul(class='unorderlist')
                             li
                                 p(id='emailParagraph') EMAIL ADDRESS
@@ -19,6 +19,7 @@ html
                                         div(class='starid')
                                             p *   
                                 div(id='email_error')
+                                    p Invalid email adress
                             li
                                 p PASSWORD
                             li
@@ -44,5 +45,5 @@ html
                         li 
                             a(href='./resetpassword.html') Forgotten password?
                         li
-                            input(class='buttontype' type='submit' value='LOGIN' id='loginbutton' form='form1')
+                            a(class='buttontype' id='loginbutton' form='form1') LOGIN
     include ./include/footer.jade

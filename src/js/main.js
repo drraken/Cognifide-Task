@@ -45,20 +45,16 @@ function wrappingReset(){
 wrappingIndex();
 wrappingReset();
 
+
 submitButton.addEventListener('click', function (e) {
     e.preventDefault();
     var result = document.getElementById('email_error');
+    var form1 = document.getElementById('form1');
     if (validate()) {
-        result.textContent = '';
-        emailParagraph.style.color = '#7d7d7d';
-        emailInputbox.style.border = '1px solid #7d7d7d';
-        console.log('valid');
+        
         location.reload();
     } else {
-        result.textContent = 'Invalid email adress';
-        emailInputbox.style.border = '1px solid red';
-        emailParagraph.style.color = 'red';
-        result.style.color = 'red';
+        form1.classList.add('invalid');
         emailInputbox.focus();
         console.log('not valid');
     }
