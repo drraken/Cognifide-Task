@@ -1,4 +1,4 @@
 node_modules/
-app/css/
-app/*.html
-app/js/
+src/jade/
+src/js
+src/scss
